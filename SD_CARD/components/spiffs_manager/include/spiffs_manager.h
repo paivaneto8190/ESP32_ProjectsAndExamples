@@ -38,7 +38,7 @@ esp_err_t spiffs_manager_format(spiffs_manager_handle_t *spiffs_obj, const char 
 /*
     @brief Records data in the spiffs partition
 */
-esp_err_t spiffs_manager_write_file(spiffs_manager_handle_t *spiffs_obj, const char *file_path, char record_mode);
+esp_err_t spiffs_manager_write_file(spiffs_manager_handle_t *spiffs_obj, const char *file_path, char record_mode, const char *data);
 
 /*
     @brief Reads data in the spiffs partition

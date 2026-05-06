@@ -68,7 +68,7 @@ esp_err_t spiffs_manager_format(spiffs_manager_handle_t *spiffs_obj, const char 
     return ESP_OK;
 }
 
-esp_err_t spiffs_manager_write(spiffs_manager_handle_t *spiffs_obj, const char *file_path, char record_mode)
+esp_err_t spiffs_manager_write(spiffs_manager_handle_t *spiffs_obj, const char *file_path, char record_mode, const char *data)
 {
     if (!spiffs_obj)
     {
@@ -98,7 +98,7 @@ esp_err_t spiffs_manager_write(spiffs_manager_handle_t *spiffs_obj, const char *
         return ESP_FAIL;
     }
 
-    fprintf(f, "Gravou\n");
+    fprintf(f, data);
     uint8_t res = fclose(f);
     if (res != 0)
     {
